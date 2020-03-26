@@ -10,7 +10,6 @@ def get_params():
 
     # settings
     parser.add_argument("--dataset", type=str, default='cora', help="Dataset string")# 'cora', 'citeseer', 'pubmed'
-    parser.add_argument('--id', type=str, default='default_id', help='id to store in database')  #
     parser.add_argument('--device', type=int, default=0,help='device to use')  #
     parser.add_argument('--setting', type=str, default="description of hyper-parameters.")  #
     parser.add_argument('--task_type', type=str, default='semi')
@@ -33,7 +32,6 @@ def get_params():
 
 args = get_params()
 params = vars(args)
-SVD_PI = True
 devices = ['0','1','-1']
 if args.machine=='dgx1':
     devices = ['3','6','7']
